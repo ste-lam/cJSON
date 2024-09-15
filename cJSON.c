@@ -200,7 +200,10 @@ static char* cJSON_strndup(const char* string, const size_t length, const intern
     {
         return NULL;
     }
-    memcpy(copy, string, length);
+    if (string != NULL)
+    {
+        memcpy(copy, string, length);
+    }
     copy[length] = '\0';
 
     return copy;
